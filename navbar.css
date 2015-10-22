@@ -4,9 +4,30 @@
     
     #navbar li{
         display:inline-block;
-        border:2px solid black;
+       
+        background-color:white;
+        font-size:30px;
+        transform:rotateZ(0deg);
+        transition:.10s all linear;
+         
     }
     
+    #navbar li:hover{
+        
+        transform:rotateZ(360deg);
+        background-color:white;
+    }
     #navbar a{
         
     }
+    #navbar {
+        margin-top:10px;
+        left: 45%;
+        text-align:center;
+        
+    }
+    /*mouse over link*/
+a:hover{
+   color:pink;}
+   
+  
