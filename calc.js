@@ -31,4 +31,7 @@ function doMath() {
         answer = Math.pow(input1.value, input2.value);
         display.innerHTML = answer;
     }
+    if (dropdown.value == "^2"){
+        answer = 
+    }
 }
