@@ -1,0 +1,48 @@
+
+
+
+body {
+        background-image: url(http://i.stack.imgur.com/jGlzr.png);
+    } 
+    h1{
+        border-style: double;
+        border-width:7px;
+        margin-right:25%;
+        margin-left:25%;
+        font-size:40px;
+        
+    }
+    
+    
+    .pictures{
+        display:inline-block;
+    }
+    #navbar{
+    text-align:center;
+    }
+    
+    #navbar li{
+        display:inline-block;
+       
+        background-color:white;
+        font-size:30px;
+        transform:rotateZ(0deg);
+        transition:.10s all linear;
+         
+    }
+    
+    #navbar li:hover{
+        
+        transform:rotateZ(360deg);
+        background-color:white;
+    }
+    
+    #navbar {
+        margin-top:10px;
+        left: 45%;
+        text-align:center;
+        
+    }
+    /*mouse over link*/
+a:hover{
+   color:pink;}
