@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+    </head>
+    <style>
+        h2 {
+            background-color:rgb(255, 204, 153);
+        font-size: 30px;
+        border-style:double;
+         border-width:7px;
+        margin-right:50%;
+        }
+        .donkies {
+        font-style:bold;
+        font-size: 23px;
+            text-align: center;
+        }
+        .spaces {
+            background-color: white;
+            border-style:double;
+            border-width:10px;
+            font-style:bold;
+        font-size: 23px;
+            text-align:left;
+        }
+    </style>
+    <link rel="stylesheet" href="infosite.css" type="text/css" />
+    <ul id="navbar">
+        <li> <a href="index.html">home</a> </li>
+        <li> <a href="hardware.html">hardware</a> </li>
+        <li> <a href="infosite.html">Infosite</a></li>
+        <li> <a href="calc.html"> Calculator</a></li>
+        <li> <a href="guessgame.html">Guessing Game</a></li>
+    </ul>
+    <h1 style=text-align:center><img src="http://vindinium.org/assets/img/ui/player3.png"></img>
+        Vindinium
+         <img src="http://vindinium.org/assets/img/ui/player3.png"></img></h1>
+    
+    <div style="text-align:center">
+    <img src="https://s3.amazonaws.com/poly-screenshots.angel.co/Project/a0/120663/73d89cbf74dde0cacf22233ec6dc6a79-original.png">
+        </img>
+        </div>
+    <body>
+        <h2 style="text-align:left">What is Vindinium?</h2>
+<p class="donkies">
+    Vindinium is a videogame that challenges you to use an AI(Artificial Intelligence) programming. AI will not allow you to control your 
+    characters during the game, but in your code you will be able to give it characteristics and tools that it can use while in the process of playing in the game.
+    In this game, there are four legendary heroes. You will fight against each AI or hero and take turns. Who ever receives the most gold will be the winner, but the great part is that you can continue to play over and over.
+</p>
+<h2 style= "text-align:left">What is My Code For My Vindinium Character?</h2>
+<p class="spaces">
+    
+// var bot = new Bot('xrp7u7cy', 'training', 'http://vindinium.org'); //Put your bot's code here and change training to Arena when you want to fight others.<br>
+var bot = new Bot('5um7muln', 'arena', 'http://52.53.211.7:9000'); //Put your bot's code here and change training to Arena when you want to fight others.<br>
+var goDir;<br>
+<br>
+<br>
+    
+        /*                                      *<br>
+         * This Code is global data!            *<br>
+         *                                      */ <br>
+
+        // Set myDir to what you want and it will set bot.goDir to that direction at the end.  Unless it is "none" <br>
+        var myDir; <br>
+        var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y]; <br>
+<br>
+        var enemyBots = []; <br>
+        if(bot.yourBot.id != 1) enemyBots.push(bot.bot1); <br>
+        if(bot.yourBot.id != 2) enemyBots.push(bot.bot2);<br>
+        if(bot.yourBot.id != 3) enemyBots.push(bot.bot3); <br>
+        if(bot.yourBot.id != 4) enemyBots.push(bot.bot4); <br>
+<br>
+//finds the closest enemy <br>
+var enemytoattack = enemyBots[0] <br>
+        for(i = 0; i < enemyBots.length ; i++){ <br>
+            if(bot.findDistance(myPos, [enemytoattack.pos.x, enemytoattack.pos.y]) > bot.findDistance(myPos, [enemyBots[i].pos.x, enemyBots[i].pos.y]) ){ <br>
+            closestBot = enemyBots[i]; <br>
+            } <br>
+        } <br>
+        /*                                      * <br>
+         * This Code Decides WHAT to do         * <br>
+         *                                      */ <br>
+        var task; <br>
+        <br>
+        if(bot.yourBot.life < 40){  <br>
+            task= "taverns" <br>
+        } <br>
+        else if(bot.yourBot.life > enemytoattack.life){ <br>
+            task = "attack"; <br>
+        } <br>
+       <br>
+        else { <br>
+        task = "freemines"; <br>
+        }//if the life is less than 65 then the bot will go to the tavern <br>
+        <br>
+        <br>
+        /*                                      * <br>
+         * This Code Determines HOW to do it    * <br>
+         *                                      */ <br>
+<br>
+        // This Code find the nearest freemine and sets myDir toward that direction // <br>
+        if(task === "freemines") { <br>
+            var closestMine = bot.freeMines[0]; <br>
+            for(i = 0; i < bot.freeMines.length; i++) { <br>
+                if(bot.findDistance(myPos, closestMine) > bot.findDistance(myPos, bot.freeMines[i])) { <br>
+                    closestMine = bot.freeMines[i]; <br>
+                } <br>
+            } <br>
+            console.log("Claiming a Free Mine!"); <br>
+            myDir = bot.findPath(myPos, closestMine); <br>
+        } <br>
+        <br>
+        <br>
+        if (task === "taverns") { <br>
+            var closestTavern = bot.Taverns[0]; <br>
+            for(i = 0; i < bot.taverns.length; i++) { <br>
+                if(bot.findDistance(myPose, closestTavern) > bot.findDistance(myPos, bot.Taverns[i])) { <br>
+                    closestTavern = bot.Taverns[i];<br>
+                }<br>
+            }<br>
+            console.log("Go to the tavern!");<br>
+            myDir = bot.findPath(myPos, closestTavern); <br>
+        }<br>
+        if(task === "attack"){<br>
+            console.log("Attacking nearest Bot!")<br>
+            myDir = bot.findPath(myPos, [enemytoattack.pos.x, enemytoattack.pos.y])<br>
+        }<br>
+        <br>
+        <p class="donkies">
+            
+        </p>
+</p>
+<h2>What have I learned from doing this project?</h2>
+    </body>
+</html>

@@ -12,7 +12,7 @@ var info3 = document.getElementById("info3");
 item1.addEventListener("click", function(){
      info1.innerHTML = "Caracal was created by an English duo consisting of brothers Howard and Guy Lawerence who create mainly electronic music."; 
     info2.innerHTML = "I really like this album because of the different types of beats and sounds that they put into this album. It is nothing like their other albums and this album really has a more indie electronic vibe to it. ";
-    info3.innerHTML = "A caracal is actually a long-legged lynxlike cat with black tufted ears and a uniform brown coat. You can see that on the album cover, there is a sketch-like image of a caracal. The reason that they chose to name their album Caracal was because the album, 'Maintains Disclosure's hypnotic and euphoric sound while introducing the listener to new artists', according to an article by VH1.";
+    info3.innerHTML = "A caracal is actually a long-legged lynxlike cat with black tufted ears and a uniform brown coat. You can see that on the album cover, there is a sketch-like image of a caracal. The reason that they chose to name their album Caracal was because the album, 'Maintains Disclosure's hypnotic and euphoric sound while introducing the listener to new artists', according to an article by VH1.<img src='https://upload.wikimedia.org/wikipedia/commons/a/a5/Caracal001.jpg' height='400'>";
 });
                       
 item2.addEventListener("click", function(){

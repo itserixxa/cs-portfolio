@@ -1,4 +1,13 @@
-#navbar{
+ body {
+        background-image: url(http://i.stack.imgur.com/jGlzr.png);
+    } 
+    h1{
+        font-size:135px;
+       text-align:center;
+    }
+ 
+ 
+ #navbar{
     text-align:center;
     }
     
@@ -11,7 +20,6 @@
         transition:.10s all linear;
          
     }
-    
     
     #navbar li:hover{
         
@@ -28,5 +36,3 @@
     /*mouse over link*/
 a:hover{
    color:pink;}
-   
-  
