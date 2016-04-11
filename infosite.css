@@ -6,6 +6,7 @@ body {
     } 
     h1{
         border-style: ridge;
+        background-color: purple;
         border-width:19px;
         margin-right:15%;
         margin-left:15%;
